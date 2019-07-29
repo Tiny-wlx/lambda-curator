@@ -126,7 +126,7 @@ def lambda_handler(event, context):
                 index_list.filter_by_regex(kind='prefix', value=prefix)
                 index_list.filter_by_age(source='creation_date', direction='older', unit='hours', unit_count=unit_count)
                 curator.DeleteIndices(index_list).do_action()
-                deleted_indices[endpoint].extend(index_list.working_list())
+                # deleted_indices[endpoint].extend(index_list.working_list())
             except NoIndices:
                 pass
 
